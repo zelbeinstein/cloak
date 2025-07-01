@@ -1,5 +1,5 @@
 # Dockerized Cloak
-[![Docker Image CI](https://github.com/zelbeinstein/docker-cloak/actions/workflows/docker-image.yml/badge.svg)](https://github.com/zelbeinstein/docker-cloak/actions/workflows/docker-image.yml)
+[![Docker Image CI](https://github.com/zelbeinstein/cloak/actions/workflows/docker-image.yml/badge.svg)](https://github.com/zelbeinstein/cloak/actions/workflows/docker-image.yml)
 
 
 [Cloak](https://github.com/cbeuw/Cloak) is a [pluggable transport](https://www.ietf.org/proceedings/103/slides/slides-103-pearg-pt-slides-01) that enhances
@@ -223,7 +223,7 @@ ck-server.
    obtained. Set `ProxyMethod` to match exactly the corresponding entry in `ProxyBook` on the server end
 4. [Configure the proxy program.](https://github.com/cbeuw/Cloak/wiki/Underlying-proxy-configuration-guides) Run
 ```bash
-docker run -d --restart=unless-stopped --name ck-client -p 1984:1984 -v /opt/ckclient.json:/opt/cloak/ckclient.json zelbeinstein/cloak ck-client -i 0.0.0.0 -u -c <path to ckclient.json> -s <ip of your server>
+docker run -d --restart=unless-stopped --name ck-client -p 1984:1984/udp -v /opt/ckclient.json:/opt/cloak/ckclient.json zelbeinstein/cloak ck-client -i 0.0.0.0 -u -c <path to ckclient.json> -s <ip of your server>
 ```
 ## Support Cloak author
 
