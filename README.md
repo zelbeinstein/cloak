@@ -2,7 +2,7 @@
 [![Docker Image CI](https://github.com/zelbeinstein/cloak/actions/workflows/docker-image.yml/badge.svg)](https://github.com/zelbeinstein/cloak/actions/workflows/docker-image.yml)
 
 
-[Cloak](https://github.com/cbeuw/Cloak) is a [pluggable transport](https://www.ietf.org/proceedings/103/slides/slides-103-pearg-pt-slides-01) that enhances
+[Cloak](https://github.com/cbeuw/Cloak) is a [pluggable transport](https://datatracker.ietf.org/meeting/103/materials/slides-103-pearg-pt-slides-01) that enhances
 traditional proxy tools like OpenVPN to evade [sophisticated censorship](https://en.wikipedia.org/wiki/Deep_packet_inspection) and [data discrimination](https://en.wikipedia.org/wiki/Net_bias).
 
 Cloak is not a standalone proxy program. Rather, it works by masquerading proxied traffic as normal web browsing
@@ -119,7 +119,7 @@ random-like. **You may only leave it as `plain` if you are certain that your und
 encryption and authentication (via AEAD or similar techniques).**
 
 `ServerName` is the domain you want to make your ISP or firewall _think_ you are visiting. Ideally it should
-match `RedirAddr` in the server's configuration, a major site the censor allows, but it doesn't have to.
+match `RedirAddr` in the server's configuration, a major site the censor allows, but it doesn't have to. Use `random` to randomize the server name for every connection made.
 
 `AlternativeNames` is an array used alongside `ServerName` to shuffle between different ServerNames for every new
 connection. **This may conflict with `CDN` Transport mode** if the CDN provider prohibits domain fronting and rejects
@@ -227,8 +227,8 @@ docker run -d --restart=unless-stopped --name ck-client -p 1984:1984/udp -v /opt
 ```
 ## Support Cloak author
 
-If you find this project useful, you can visit my [merch store](https://www.redbubble.com/people/cbeuw/explore);
-alternatively you can donate directly to me
+If you find this project useful, you can visit Cbeuw [merch store](https://www.redbubble.com/people/cbeuw/explore);
+alternatively you can donate directly
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SAUYKGSREP8GL&source=url)
 

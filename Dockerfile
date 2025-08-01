@@ -1,6 +1,6 @@
 ARG BUILDER=golang:1.24-alpine3.22
 ARG PROD=alpine:3.22
-ARG CLOAK_VER=v2.11.0
+ARG CLOAK_VER=v2.12.0
 
 FROM $BUILDER as builder
 RUN apk add make git
